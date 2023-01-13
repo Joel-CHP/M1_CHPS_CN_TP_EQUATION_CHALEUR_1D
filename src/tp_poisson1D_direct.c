@@ -50,11 +50,13 @@ int main(int argc,char *argv[])
 
   AB = (double *) malloc(sizeof(double)*lab*la);
 
-  set_GB_operator_colMajor_poisson1D(AB, &lab, &la, &kv);
+  /// Création d'une matrice Poisson1D GB de taille lab*la
+  set_GB_operator_colMajor_poisson1D(AB, &lab, &la, &kv); 
 
-  /*
-    write_GB_operator_colMajor_poisson1D(AB, &lab, &la, "AB.dat");
-  */
+  /// Exercice 4, question 2 : Utilisation de la fonction dgbmv avec la matrice GB
+  cblas_dgbmv(CblasColMajor, CblasTrans, la, la, kl, ku, 1, AB, lab, EX_SOL, 1, 0, RHS, 1);
+
+  write_GB_operator_colMajor_poisson1D(AB, &lab, &la, "AB.dat");
 
   printf("Solution with LAPACK\n");
   /* LU Factorization */

@@ -62,6 +62,7 @@ int main(int argc,char *argv[])
   /* uncomment the following to check matrix A */
   // write_GB_operator_colMajor_poisson1D(AB, &lab, &la, "AB.dat");
   
+
   /********************************************/
   /* Solution (Richardson with optimal alpha) */
 

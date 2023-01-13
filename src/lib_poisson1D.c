@@ -5,6 +5,7 @@
 /**********************************************/
 #include "lib_poisson1D.h"
 
+/// Création d'une matrice Poisson1D GB de taille lab*la
 void set_GB_operator_colMajor_poisson1D(double* AB, int *lab, int *la, int *kv){
   int ii, jj, kk;
   for (jj=0;jj<(*la);jj++){
@@ -49,6 +50,7 @@ void set_dense_RHS_DBC_1D(double* RHS, int* la, double* BC0, double* BC1){
     RHS[jj]=0.0;
   }
 }  
+
 
 void set_analytical_solution_DBC_1D(double* EX_SOL, double* X, int* la, double* BC0, double* BC1){
   int jj;
